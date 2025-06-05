@@ -1,0 +1,45 @@
+<html><head>
+    <title>Audio Recorder</title>
+</head>
+<body style="display: flex; justify-content: center;">
+    <div style="width: 100%;">
+    <h1 style="text-align:center;">Conversational AI</h1>
+    <div style="display: flex; justify-content: center;">
+            <div style="width: 50%;">
+                <h2 style="text-align:center;">Record and Upload Audio</h2>
+
+                <button id="record">Record</button>
+                <button id="stop">Stop</button>
+                <span id="timer">00:00</span>
+                <audio id="audio"></audio>
+                <form id="uploadForm" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="audio_data" id="audioData">
+                </form>
+                <script src="script.js"></script>
+                <hl></hl>
+                <h2>Recorded Files</h2>
+                <div style="max-height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; width: 50%;">
+                    <ul>
+                        {% for file in files %}
+                        <li>
+                            <audio controls="">
+                                <source src="{{ url_for('tts_file', filename=file) }}">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <button id="Transcript+{{file}}" onclick="showText('{{file}}')">Transcription</button>
+                            
+                            
+                            <div id="textDisplay-{{file}}" style="display:none; max-height:150px; overflow-y:auto; border:1px solid #ccc; padding:10px; width:300px;">
+                                
+                            </div>
+                            <br>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+                </div>
+    </div>
+
+
+</body></html>
