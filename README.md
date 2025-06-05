@@ -12,7 +12,7 @@ potential for enhancing accessibility, automation, and communication in modern t
 solutions.
 
 # Architecture
-
+![Archi](https://github.com/8LuLzSeC8/LLM-using-google-API-s/blob/c39eaab721ee9529b2be95012fd5974e13c87b45/archi.png)
 
 **User Interface:** The user interface of the project application is a standard HTML landing page which 
 send GET and POST requests to upload or retrieve data. This HTML page is rendered through a 
